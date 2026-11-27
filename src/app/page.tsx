@@ -177,6 +177,13 @@ export default function Home() {
     return null;
   };
 
+  const providers: { id: AIProvider; label: string }[] = [
+    { id: 'gemini', label: 'Gemini' },
+    { id: 'openai', label: 'OpenAI' },
+    { id: 'anthropic', label: 'Anthropic' },
+    { id: 'local', label: 'Local' },
+  ];
+
   const handleProceed = () => {
     const next = getNextStep();
     if (!next) return;
@@ -270,16 +277,10 @@ export default function Home() {
 
   useEffect(() => {
     if (isAutoRun && !isRunning && isStarted && !allDone && nextToRun) {
-      handleProceed();
+      const timer = setTimeout(() => handleProceed(), 0);
+      return () => clearTimeout(timer);
     }
   }, [isRunning, isStarted, allDone, isAutoRun]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  const providers: { id: AIProvider; label: string }[] = [
-    { id: 'gemini', label: 'Gemini' },
-    { id: 'openai', label: 'OpenAI' },
-    { id: 'anthropic', label: 'Anthropic' },
-    { id: 'local', label: 'Local' },
-  ];
 
   return (
     <div className="min-h-screen relative text-emerald-50 selection:bg-emerald-500/30 selection:text-emerald-100">
