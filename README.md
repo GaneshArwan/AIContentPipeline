@@ -6,6 +6,20 @@
 
 AIContentPipeline is a Next.js application that runs a 5-step sequential pipeline to generate content. It uses LangChain.js to interface with external LLM APIs (Gemini, OpenAI, Anthropic) or local inference servers. The application is entirely client-side driven and stateless.
 
+## Live Demo
+
+Live Deployment: [ai-content-pipeline-one.vercel.app](https://ai-content-pipeline-one.vercel.app/)
+
+![Live Demo](docs/media/demo.gif)
+
+[Watch full MP4 walkthrough](docs/media/demo.mp4)
+
+## Screenshots
+
+| Pipeline Workspace | Step & Execution Log |
+| :---: | :---: |
+| ![Pipeline Workspace](docs/media/screenshot-desktop.png) | ![Step & Execution Log](docs/media/screenshot-interactive.png) |
+
 ---
 
 ## Technical Architecture
